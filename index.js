@@ -5,7 +5,6 @@ const fs = require('fs')
 
 var server = http.createServer((req, res) => {
 
-
     const whatWGUrl = new URL(req.url, `http://${req.headers.host}`);
 
     var contentType = '';
@@ -21,7 +20,8 @@ var server = http.createServer((req, res) => {
 			//console.log(err);
 			if (err.code == 'ENOENT') {
 				// file does not exist - we should return a 404 status code
-				//console.log('404 error getting ' + pathname);
+                //console.log('404 error getting ' + pathname);
+                if (content)
 				res.writeHead(404, {
 					"Content-Type": "text/plain"
 				});
