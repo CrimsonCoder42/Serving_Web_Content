@@ -1,3 +1,5 @@
+var http = require('http');
+
 var server = http.createServer( requestListener );
 
 var port = 8080;
